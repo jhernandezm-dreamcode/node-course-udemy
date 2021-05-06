@@ -1,0 +1,23 @@
+{
+  "name": "course-udemy",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jhernandezm-dreamcode/node-course-udemy.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jhernandezm-dreamcode/node-course-udemy/issues"
+  },
+  "homepage": "https://github.com/jhernandezm-dreamcode/node-course-udemy#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nodemon": "^2.0.7"
+  }
+}
