@@ -10,11 +10,11 @@ async function saveItem(request, response) {
       name: request.body.name,
       price: request.body.price,
     });
-    let saveItem = await item.save();
+    let saveItemTmp = await item.save();
     await Database.dbDisconect();
     return response.status(200).json({
       message: `Data has been successfully save`,
-      data: saveItem,
+      data: saveItemTmp,
     });
   } catch (error) {
     console.log(error);
