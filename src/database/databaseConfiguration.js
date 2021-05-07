@@ -3,7 +3,7 @@ const uri = require("../settings/dbcredential");
 
 const dbConnect = async () => {
   try {
-    await moongose.connect(uri.mongoDBUri);
+    await moongose.connect(uri.mongoDBUri,{useNewUrlParser:true});
     console.log("DB connected");
   } catch (error) {
     console.log("error db", error);
