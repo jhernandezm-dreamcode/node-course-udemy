@@ -17,7 +17,7 @@ async function saveItem(request, response) {
       data: saveItem,
     });
   } catch (error) {
-    console.log(error)
+    console.log(error);
     return response.status(400).json({
       error: {
         message: `Fail proccesing request`,
@@ -27,8 +27,23 @@ async function saveItem(request, response) {
   }
 }
 
-async function addItems(request, response) {
-  response.sendFile(path.resolve("src/views/add-item.html"));
+async function findAllItems(request, response) {
+  try {
+    await Database.dbConnect();
+    let items = await Item.find();
+    await Database.dbDisconect();
+    return response.status(200).json({
+      message: `Data has been successfully save`,
+      data: items,
+    });
+  } catch (error) {
+    return response.status(400).json({
+      error: {
+        message: `Fail proccesing request`,
+        description: error,
+      },
+    });
+  }
 }
 
-module.exports = { saveItem, addItems };
+module.exports = { saveItem, findAllItems };
